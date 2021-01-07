@@ -1,3 +1,12 @@
 {
-  
+  "rules": {
+    "no-var-keyword": true,
+    "prefer-const": true,
+    "import-spacing": true,
+    "interface-name": [true, "always-prefix"],
+    "no-trailing-whitespace": [true, "ignore-comments", "ignore-jsdoc"],
+    "no-magic-numbers": [true, 1, 2, 3],
+    "no-any": true,
+    "only-arrow-functions": true
+  }
 }
