@@ -1,12 +1,11 @@
 import React from 'react';
-import {View, Button, ScrollView, Dimensions} from 'react-native';
+import {ScrollView, Dimensions} from 'react-native';
 import {Header} from 'react-native-elements';
 import {
   LineChart,
   BarChart,
   PieChart,
   ProgressChart,
-  ContributionGraph,
   StackedBarChart,
 } from 'react-native-chart-kit';
 const screenWidth = Dimensions.get('window').width;
@@ -96,29 +95,19 @@ const Home = (props: IProps) => {
       legendFontSize: 15,
     },
   ];
-  const commitsData = [
-    {date: '2017-01-02', count: 1},
-    {date: '2017-01-03', count: 2},
-    {date: '2017-01-04', count: 3},
-    {date: '2017-01-05', count: 4},
-    {date: '2017-01-06', count: 5},
-    {date: '2017-01-30', count: 2},
-    {date: '2017-01-31', count: 3},
-    {date: '2017-03-01', count: 2},
-    {date: '2017-04-02', count: 4},
-    {date: '2017-03-05', count: 2},
-    {date: '2017-02-30', count: 4},
-  ];
   return (
     <>
       <Header
-        leftComponent={{icon: 'menu', color: '#fff'}}
-        centerComponent={{text: 'MY TITLE', style: {color: '#fff'}}}
-        rightComponent={{icon: 'home', color: '#fff'}}
+        leftComponent={{
+          icon: 'menu',
+          color: '#fff',
+          onPress: () => navigation.openDrawer(),
+        }}
+        centerComponent={{
+          text: 'react-native-chart-kit基本图表',
+          style: {color: '#fff'},
+        }}
       />
-      <View>
-        <Button title="openDrawer" onPress={() => navigation.openDrawer()} />
-      </View>
       <ScrollView>
         <LineChart
           data={{
@@ -189,12 +178,14 @@ const Home = (props: IProps) => {
           width={screenWidth}
           height={220}
           yAxisLabel="$"
+          yAxisSuffix="11"
           chartConfig={chartConfig}
           verticalLabelRotation={30}
         />
         <StackedBarChart
           // style={graphStyle}
           data={data3}
+          hideLegend={false}
           width={screenWidth}
           height={220}
           chartConfig={chartConfig}
@@ -209,14 +200,6 @@ const Home = (props: IProps) => {
           paddingLeft={'15'}
           center={[10, 50]}
           absolute
-        />
-        <ContributionGraph
-          values={commitsData}
-          endDate={new Date('2017-04-01')}
-          numDays={105}
-          width={screenWidth}
-          height={220}
-          chartConfig={chartConfig}
         />
       </ScrollView>
     </>

@@ -9,9 +9,17 @@ const Drawer = createDrawerNavigator();
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Page1" component={Page1} />
+      <Drawer.Navigator initialRouteName="Page1">
+        <Drawer.Screen
+          name="Home"
+          options={{title: '基本图表'}}
+          component={Home}
+        />
+        <Drawer.Screen
+          name="Page1"
+          options={{title: 'Dashboard'}}
+          component={Page1}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );
