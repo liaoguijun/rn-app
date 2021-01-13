@@ -2048,6 +2048,10 @@
         "source": "/home/lgj/.gradle/caches/transforms-2/files-2.1/863e0c3c6716935cd3657ad638fd992d/material-1.1.0/res/color/mtrl_navigation_item_text_color.xml"
     },
     {
+        "merged": "/home/lgj/yema/MyApp/android/app/build/intermediates/res/merged/debug/xml_file_provider_paths.xml.flat",
+        "source": "/home/lgj/yema/MyApp/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug/xml/file_provider_paths.xml"
+    },
+    {
         "merged": "/home/lgj/yema/MyApp/android/app/build/intermediates/res/merged/debug/drawable_ic_edit_black_24dp.xml.flat",
         "source": "/home/lgj/.gradle/caches/transforms-2/files-2.1/863e0c3c6716935cd3657ad638fd992d/material-1.1.0/res/drawable/ic_edit_black_24dp.xml"
     },
