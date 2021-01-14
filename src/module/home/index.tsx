@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {inject, observer} from 'mobx-react';
 import {
   Text,
   ImageBackground,
@@ -21,6 +22,9 @@ const Home = (props: IProps) => {
   const {navigation} = props;
   const {navigate} = navigation;
   const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    console.log(props);
+  }, [props]);
   const styles = StyleSheet.create({
     bg: {
       height: screenHeight,
@@ -112,4 +116,4 @@ const Home = (props: IProps) => {
   );
 };
 
-export default Home;
+export default inject('homestore')(observer(Home));
